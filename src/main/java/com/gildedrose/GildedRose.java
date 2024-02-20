@@ -21,35 +21,35 @@ class GildedRose {
     		  case AGED_BRIE:
     			items[i].sellIn -= 1;
   				
+  			increaseDecreaseQuality(items[i],1);
+  			if (items[i].sellIn < 0) {
   				increaseDecreaseQuality(items[i],1);
-  				if (items[i].sellIn < 0) {
-  					increaseDecreaseQuality(items[i],1);
-  				}
+  			}
     		    break;
     		  case BACKSTAGE:
     			items[i].sellIn -= 1;
 					
     			increaseDecreaseQuality(items[i],1);
-				if (items[i].sellIn < 11) {
-					increaseDecreaseQuality(items[i],1);
-                }
+			if (items[i].sellIn < 11) {
+				increaseDecreaseQuality(items[i],1);
+                	}
 
-                if (items[i].sellIn < 6) {
-                    increaseDecreaseQuality(items[i],1);
-                }
+                	if (items[i].sellIn < 6) {
+                    		increaseDecreaseQuality(items[i],1);
+                	}
 						
-				if (items[i].sellIn < 0) {
-					items[i].quality = 0;
-				}
+			if (items[i].sellIn < 0) {
+				items[i].quality = 0;
+			}
 				
     		    break;
     		  case CONJURED:
     			items[i].sellIn -= 1;
     			
+			increaseDecreaseQuality(items[i],-2);
+			if (items[i].sellIn < 0) {
 				increaseDecreaseQuality(items[i],-2);
-				if (items[i].sellIn < 0) {
-					increaseDecreaseQuality(items[i],-2);
-				}
+			}
       		    break;
     		  case SULFURAS:
       		    // Aucune action
@@ -57,10 +57,10 @@ class GildedRose {
     		  default:
     			items[i].sellIn -= 1;
     			
+			increaseDecreaseQuality(items[i],-1);
+			if (items[i].sellIn < 0) {
 				increaseDecreaseQuality(items[i],-1);
-				if (items[i].sellIn < 0) {
-					increaseDecreaseQuality(items[i],-1);
-				}
+			}
     		}
         }
     }
